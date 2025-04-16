@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+
 public class ex2 {
     public static void main(String[] args) {
         int quantidade = Integer.parseInt(JOptionPane.showInputDialog("Quantos médicos deseja cadastrar?")); // Lê a quantidade
@@ -13,13 +14,13 @@ public class ex2 {
             especialidades[i] = especialidade;                   // Armazena especialidade no array
         }
 
-        StringBuilder resultado = new StringBuilder();           // Monta a string de resultado
+        String resultado = "";                                   // String para armazenar o resultado
 
-        for (int i = 0; i < quantidade; i++) {                   // Exibe os dados com base na quantidade
-            resultado.append("Médico: ").append(medicos[i]).append("\n");
-            resultado.append("Especialidade: ").append(especialidades[i]).append("\n\n");
+        for (int i = 0; i < quantidade; i++) {                   // Monta o texto com concatenação
+            resultado += "Médico: " + medicos[i] + "\n";
+            resultado += "Especialidade: " + especialidades[i] + "\n\n";
         }
 
-        JOptionPane.showMessageDialog(null, resultado.toString()); // Exibe tudo
+        JOptionPane.showMessageDialog(null, resultado);          // Exibe tudo
     }
 }
